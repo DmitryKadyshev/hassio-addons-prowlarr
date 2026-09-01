@@ -21,7 +21,7 @@ RUN \
   elif [ "${BUILD_ARCH}" = "amd64" ]; then PROWLARR_ARCH="x64"; fi \
   \
   && curl -J -L -o /tmp/prowlarr.tar.gz \
-      "https://github.com/Prowlarr/Prowlarr/releases/download/v${PROWLARR_VERSION}/Prowlarr.master.${PROWLARR_VERSION}.linux-musl-core-${PROWLARR_ARCH}.tar.gz" \
+      "https://github.com/Prowlarr/Prowlarr/releases/download/v${PROWLARR_VERSION}/Prowlarr.develop.${PROWLARR_VERSION}.linux-musl-core-${PROWLARR_ARCH}.tar.gz" \
   && mkdir -p /opt/bin \
   && tar zxvf \
       /tmp/prowlarr.tar.gz \
