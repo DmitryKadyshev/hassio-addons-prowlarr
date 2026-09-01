@@ -8,7 +8,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 ARG PROWLARR_VERSION=2.6.3.5592
 ARG BUILD_ARCH=amd64
-ARG BUILD_VERSION=dev
+ARG BUILD_VERSION=${PROWLARR_VERSION}
 ENV XDG_CONFIG_HOME="/config/xdg"
 # hadolint ignore=DL3003,DL3042
 RUN \
