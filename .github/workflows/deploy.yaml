@@ -3,19 +3,27 @@ name: Deploy
 
 # yamllint disable-line rule:truthy
 on:
+  push:
+    branches:
+      - main
   release:
     types:
       - published
-  workflow_run:
-    workflows: ["CI"]
-    branches: [main]
-    types:
-      - completed
 
 permissions: {}
 
 jobs:
+  ci:
+    permissions:
+      actions: read
+      contents: write
+      pull-requests: read
+      packages: read
+      security-events: write
+    uses: ./.github/workflows/app-ci.yaml
+
   deploy:
+    needs: ci
     permissions:
       contents: read
       packages: write
